@@ -4,13 +4,24 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
+
+$(document).ready(function() {
+  //Preloader
+  var preloaderFadeOutTime = 1500;
+  function hidePreloader() {
+  var preloader = $('.spinner-wrapper');
+  preloader.fadeOut(preloaderFadeOutTime);
+  }
+  hidePreloader();
+  });
+
 !(function($) {
   "use strict";
 
   // Preloader
-  $(window).on('load', function() {
-    if ($('#preloader').length) {
-      $('#preloader').delay(100).fadeOut('slow', function() {
+  $(window).on('.spinner-wrapper', function() {
+    if ($('.spiiner-wrapper').length) {
+      $('.spinner-wrapper').delay(100).fadeOut('slow', function() {
         $(this).remove();
       });
     }
