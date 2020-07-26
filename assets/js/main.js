@@ -5,7 +5,7 @@
 * License: https://bootstrapmade.com/license/
 */
 $(document).ready(function() {
-  $(".loaderArea").delay(1000).fadeOut("slow");
+  $(".loaderArea").delay(500).fadeOut("slow");
   })
 
 !(function($) {
@@ -14,7 +14,7 @@ $(document).ready(function() {
   // Preloader
   $(window).on('.loaderA', function() {
     if ($('.loaderA').length) {
-      $('.loaderA').delay(100).fadeOut('slow', function() {
+      $('.loaderA').delay(30).fadeOut('slow', function() {
         $(this).remove();
       });
     }
