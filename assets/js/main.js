@@ -20,7 +20,7 @@ $(document).ready(function() {
 
   // Preloader
   $(window).on('.spinner-wrapper', function() {
-    if ($('.spiiner-wrapper').length) {
+    if ($('.spinner-wrapper').length) {
       $('.spinner-wrapper').delay(100).fadeOut('slow', function() {
         $(this).remove();
       });
