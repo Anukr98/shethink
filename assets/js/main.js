@@ -9,7 +9,7 @@ $(document).ready(function() {
   //Preloader
   var preloaderFadeOutTime = 5000;
   function hidePreloader() {
-  var preloader = $('.spinner-wrapper');
+  var preloader = $('.loaderArea');
   preloader.fadeOut(preloaderFadeOutTime);
   }
   hidePreloader();
@@ -19,9 +19,9 @@ $(document).ready(function() {
   "use strict";
 
   // Preloader
-  $(window).on('.spinner-wrapper', function() {
-    if ($('.spinner-wrapper').length) {
-      $('.spinner-wrapper').delay(100).fadeOut('slow', function() {
+  $(window).on('.loaderArea', function() {
+    if ($('.loaderArea').length) {
+      $('.loaderArea').delay(100).fadeOut('slow', function() {
         $(this).remove();
       });
     }

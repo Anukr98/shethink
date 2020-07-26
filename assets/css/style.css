@@ -33,79 +33,64 @@ h1, h2, h3, h4, h5, h6 {
 /*--------------------------------------------------------------
 # Preloader
 --------------------------------------------------------------*/
-.sk-cube-grid {
-  width: 40px;
-  height: 40px;
+.loaderArea {
+  font-family: sans-serif;
+  background-color: #000;
+  overflow: hidden;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right:0;
+  bottom:0;
+  z-index: 100000;
+}
+.loader {
   position: absolute;
-  top: 48%;
-  left: 48%;
+  left: 45%;
+  margin-left: -20px;
+  top: 45%;
+  margin-top: -20px;
+}
+.loader h1{
+    color: #fff;
+    display: inline-block;
+    margin: 0;
+}
+.loader h1{
+    animation: preloader1 4s ease infinite; 
 }
 
-.sk-cube-grid .sk-cube {
-  width: 33%;
-  height: 33%;
-  background-color: #333;
-  float: left;
-  -webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
-          animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out; 
+.loader .loaderSquare{
+    width: 10px;
+    height: 11px;
+    background-color: #fff;
+    animation: preloadersquare 4s ease infinite;
 }
-.sk-cube-grid .sk-cube1 {
-  -webkit-animation-delay: 0.2s;
-          animation-delay: 0.2s; }
-.sk-cube-grid .sk-cube2 {
-  -webkit-animation-delay: 0.3s;
-          animation-delay: 0.3s; }
-.sk-cube-grid .sk-cube3 {
-  -webkit-animation-delay: 0.4s;
-          animation-delay: 0.4s; }
-.sk-cube-grid .sk-cube4 {
-  -webkit-animation-delay: 0.1s;
-          animation-delay: 0.1s; }
-.sk-cube-grid .sk-cube5 {
-  -webkit-animation-delay: 0.2s;
-          animation-delay: 0.2s; }
-.sk-cube-grid .sk-cube6 {
-  -webkit-animation-delay: 0.3s;
-          animation-delay: 0.3s; }
-.sk-cube-grid .sk-cube7 {
-  -webkit-animation-delay: 0s;
-          animation-delay: 0s; }
-.sk-cube-grid .sk-cube8 {
-  -webkit-animation-delay: 0.1s;
-          animation-delay: 0.1s; }
-.sk-cube-grid .sk-cube9 {
-  -webkit-animation-delay: 0.2s;
-          animation-delay: 0.2s; }
-
-@-webkit-keyframes sk-cubeGridScaleDelay {
-  0%, 70%, 100% {
-    -webkit-transform: scale3D(1, 1, 1);
-            transform: scale3D(1, 1, 1);
-  } 35% {
-    -webkit-transform: scale3D(0, 0, 1);
-            transform: scale3D(0, 0, 1); 
-  }
+.loader h2{
+    margin: 0;
+    color: #fff;
+    font-size: 10px;
+    position: absolute;
+    top: 37px;
+    left: 15px;
+    animation: preloadercreated 4s ease infinite;
+}
+@keyframes preloadercreated{
+    from{left: 15px;}
+    50%{left: 56px;}
+    to{left: 15px;}
+}
+@keyframes preloadersquare{
+    from{width: 10px;}
+    50%{width: 50px;}
+    to{width: 10px;}
+}
+@keyframes preloader1{
+    from{opacity: 0;}
+    50%{opacity: 1;}
+    to{opacity: 0;}
 }
 
-@keyframes sk-cubeGridScaleDelay {
-  0%, 70%, 100% {
-    -webkit-transform: scale3D(1, 1, 1);
-            transform: scale3D(1, 1, 1);
-  } 35% {
-    -webkit-transform: scale3D(0, 0, 1);
-            transform: scale3D(0, 0, 1);
-  } 
-}
-
-.spinner-wrapper {
-position: fixed;
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
-background-color: #fffdfda2;
-z-index: 999999;
-}
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
