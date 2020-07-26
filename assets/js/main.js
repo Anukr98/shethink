@@ -7,7 +7,7 @@
 
 $(document).ready(function() {
   //Preloader
-  var preloaderFadeOutTime = 1500;
+  var preloaderFadeOutTime = 1000;
   function hidePreloader() {
   var preloader = $('.spinner-wrapper');
   preloader.fadeOut(preloaderFadeOutTime);
