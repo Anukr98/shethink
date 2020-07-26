@@ -1,0 +1,65 @@
+<?php
+if(!isset($_POST['submit']))
+{
+	//This page should not be accessed directly. Need to submit the form.
+	echo "error; you need to submit the form!";
+}
+$name = $_POST['name'];
+$email = $_POST['email'];
+$phone = $_POST['phone'];
+$budget = $_POST['budget'];
+$look = $_POST['look'];
+$company = $_POST['company'];
+$other = $_POST['other'];
+$idea = $_POST['idea'];
+
+
+//Validate first
+if(empty($name)||empty($email)) 
+{
+    echo "Name and email are mandatory!";
+    exit;
+}
+
+if(IsInjected($email))
+{
+    echo "Bad email value!";
+    exit;
+}
+
+$email_from = 'shethink2019@gmail.com';//<== update the email address
+$email_subject = "New Discussion submission";
+$email_body = "You have received a new message from the user $name ,emailID $email \n". "Phone number is $phone \n Their Budget is $budget \n Looking for $look Company name is $company \n Other details are : $other \n  and here is the idea:\n $idea";
+$to = "abhishek.17bcs1057@abes.ac.in";//<== update the email address
+$headers = "From: $email_from \r\n";
+$headers .= "Reply-To: $email_from \r\n";
+//Send the email!
+mail($to,$email_subject,$email_body,$headers);
+//done. redirect to thank-you page.
+header('Location: ./index.html');
+
+
+// Function to validate against any email injection attempts
+function IsInjected($str)
+{
+  $injections = array('(\n+)',
+              '(\r+)',
+              '(\t+)',
+              '(%0A+)',
+              '(%0D+)',
+              '(%08+)',
+              '(%09+)'
+              );
+  $inject = join('|', $injections);
+  $inject = "/$inject/i";
+  if(preg_match($inject,$str))
+    {
+    return true;
+  }
+  else
+    {
+    return false;
+  }
+}
+   
+?> 
